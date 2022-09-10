@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Codesmith Technical Interview Prep</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<main class="container">
+    <section class="column" id="menu">
+        <ul>
+            <li class="boxShadow, menuItems"><a href="indux.html">Test</a></li>
+            <li class="boxShadow, menuItems"><a href="verbal.html">Verbal</a></li>
+            <li class="boxShadow, menuItems"><a href="tips.html">Tips</a></li>
+          
+        </ul>
+    </section>
+
+    <section class="column" id="content">
+        <h1>Codesmith Technical <br>
+            Interview Prep</h1>
+
+            <h2>Execution context:</h2>
+            <ul>
+            <li>The environment in which a JavaScript function is being executed. </li>
+            <li>Each execution context has its own variable scope.</li>
+            </ul>
+            <p>Note:<br>
+            Whenever a function is invoked, a new execution context is pushed onto the call stack, and a new variable environment is created along with it. The function’s code runs in the new execution context and has access to the variable environment in the execution context directly below that new execution context (the one in which the function was invoked).
+            Upon exit of the function, the execution context is popped off of the call stack. Code in one execution context is stopped until the code in the execution context above it finishes running.
+            </p>
+            
+            <h2>Scope:</h2>
+            <ul>
+            <li>the variable environment that gets created when a new execution context is pushed onto the stack</li>
+            <li>code inside a scope not only has access to its own variables inside that scope, but also to the variables in the parent scope</li></ul>
+            
+            <p>Note:<br>
+            Variable environments are commonly referred to as “scope.” While each execution context is stacked on top of the execution context preceding it, each scope is created inside of the previous scope. Code being executed inside a scope not only has access to the variables in that scope, but also the variables in all the scopes that encase it. Therefore, code that runs in a given execution context has access to all the variables created in the execution contexts below it.</p>
+            
+<h2>Closure:</h2>
+<ul>
+<li>It creates a closed over variable environment (C.O.V.E.) at the time a function is defined, which means it gives you access to an outer function's scope from an inner function even after the outer function has returned</li>
+<li>Any variables used by the child/inner function are stored on the [[scope]] property of the function object.</li>
+<li>the C.O.V.E is also called Persistent Lexical Scope Reference (PLSR) </li></ul>
+
+<p>Note:<br>
+If multiple functions are created in the same execution context and all of them outlive that execution context, those functions each have their own closure, and each of these closures will access the same variables in memory. Therefore, mutation of those variables by one of those functions will affect the other functions in the manner that they will be accessing the same (mutated) variables.</p>
+
+<h2>What are closures used for? </h2>
+<ul>
+<li>data encapsulation and data privacy in OOP</li>
+<li>they create private access to variables by creating functions that are the only objects with access to these variables.</li></ul>
+
+<p>Note:<br>
+Closures are used especially often when functionality is being imported into a file from another file. The code in the imported file is executed, creating a closure for any function(s) exported from the file. This is a common method for JavaScript libraries to be made available for use to a developer’s application and helps developers maintain modularity of their code. Also used in delayed execution like settimeout()</p>
+
+
+
+
+<h2>Recursion:</h2>
+<p>A function that calls itself until it reaches a base case</p>
+
+<h2>Callback:</h2>
+<p>A function passed into another function as an argument</p>
+
+<h2>Higher-order functions:</h2>
+<p>Functions that take a function as input and/or return a function as output </p>
+
+<h2>What is the benefit of higher order functions? </h2>
+<p>They provide an additional layer of abstraction, using callbacks as parameters to control functionality instead of simple values.</p>
+
+<h2>What is the difference between var/let/const?</h2>
+
+<pre><code>
+    Var
+    - function scoped
+    - can be redeclared and re-assigned
+    - hoisted and initialized with a default value of undefined during compile time
+    
+    Let & Const
+    - block scoped
+    - can't be redeclared and its value is only accessible after it is evaluated at runtime
+    - hoisted but not initialized at compile time
+    
+    The difference between let & const:
+    - Let can be re-assigned but const cannot 
+</code></pre>
+
+<h2>What does pass by value vs pass by reference mean?</h2>
+<ul>
+<li> Primitive types (boolean, null, undefined, string, and number) are passed by value </li>
+<li> Objects (arrays, functions, objects) are passed by reference, meaning variables that are assigned a non-primitive value are given a reference to that value. That reference points to the object’s location in memory (like an address). The variables don’t actually contain the value. </li>
+</ul>    
+<h2>What is a pure function?</h2><ul>
+    <li>Functions that don’t affect anything in the outside scope</li>
+    <li>Given the same input, will always return the same output without side effects.</li>
+</ul>   
+    <p>Note:<br>
+    As long as a function only takes primitive values as parameters and doesn’t use any variables in its surrounding scope, it is automatically pure, as it can’t affect anything in the outside scope. All variables created inside are garbage-collected as soon as the function returns.
+    <br><br>
+    A function that takes in an Object, however, can mutate the state of its surrounding scope. If a function takes in an array reference and alters the array that it points to, perhaps by pushing to it, variables in the surrounding scope that reference that array see that change. After the function returns, the changes it makes persist in the outer scope. This can cause undesired side effects that can be difficult to track down.</p>
+    
+    <h2>Hoisting:</h2>
+    <p>During the compile phase, JS adds all function declarations and variable declarations to the top of the scope</p>
+    
+    <p>Note: <br>
+    During the compile phase JS hoists DECLARATIONS of variables, not initialization (assignments). It also hoists DECLARATIONS of functions, not expressions.</p>
+    
+    <h2>Parameter / argument?</h2>
+    <ul><li>Parameters are variables listed as part of the function definition</li>
+    <li>Arguments are the actual values being passed to the function when it is invoked</li>
+    </ul>
+    <h2>Rest parameter / spread operator?</h2><ul>
+    <li>The spread operator “spreads” the values in an iterable (arrays, strings) across zero or more arguments or elements. </li>
+    <li>The rest parameter ""gathers"" multiple elements into an array. It allows us to pass an indefinite number of parameters to a function.</li>
+    </ul>
+    <h2>Arrow functions / regular function?</h2><ul>
+    <li>An arrow function does not have the arguments object bound to it</li>
+    <li>The "this" value inside of an arrow function always equals the "this" value from its closest non-arrow parent function.</li>
+    <li>Arrow functions can never be used as constructor functions. So using the "new" keyword won't work.</li>
+    
+
+
+</section>
+
+
+</main>
+
+<script src="script.js"></script>
+<script src="questions.js"></script>
+
+
+</body>
+</html>

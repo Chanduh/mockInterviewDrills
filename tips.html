@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Codesmith Technical Interview Prep</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<main class="container">
+    <section class="column" id="menu">
+        <ul>
+            <li class="boxShadow, menuItems"><a href="indux.html">Test</a></li>
+            <li class="boxShadow, menuItems"><a href="verbal.html">Verbal</a></li>
+            <li class="boxShadow, menuItems"><a href="tips.html">Tips</a></li>
+          
+        </ul>
+    </section>
+
+    <section class="column" id="content">
+        <h1>Codesmith Technical <br>
+            Interview Prep</h1>
+                
+
+        <h2>When given a question, follow these steps</h2>
+        <ul>
+            <li>Read the question out loud. If you must re-read it several times to process it, do so.</li>
+            <li>Give a high-level verbal summary or game plan of how you’re going to approach the problem</li>
+            <li>Type out what kind of input/outputs you’re expecting like this:
+ <pre><code>
+    // i: callback, number
+    // o: array
+ </code></pre>
+            If it’s a closure problem you’re always going to return a function. Type it out like this:
+<pre><code>
+    // i: array
+    // o: function    
+        // i: number
+        // o: object
+ </code></pre>
+            <li>Pseudo-code the way you would verbalize your logic, not the exact specifics of what you’re going to use in your code</li>
+            <li>Add your test cases, if they provide 1, add another. You can wrap a console.log() around the invocation of your functions.</li>
+        </ul>
+
+            <h2>Technical Communication:</h2>
+                <ul>
+                    <li>When you declare a function say “I’m going to declare a function called/with a label of ___. With [# of] parameter(s) called ____”.</li>
+                    <li>When you declare a constant, say “I’m going to a declare a constant called/with a label of ___”. Don’t say “equals” or “set that to”. If you are immediately assigning it to a value, follow it up with “…and I’ll assign at value of” or “…and I will initialize to ___.”</li>
+                    <li>If it’s a variable declared with let, just say the same as above but replace “constant” with “variable. Again, don’t say “equals” or “set that to”.</li>
+                    <li>When you write your test cases say “I’m going to console.log the evaluated result of invoking the function ____, passing in the arguments ____.”</li>
+                    <li>When writing a for-loop to iterate through an array, say “I’ll iterate through this ____ using a for-loop. I’m going initialize i to [#], and while i is [condition] than the length of the array, increment i by [#] each time”.</li>
+                    <li>When you’re testing a Boolean say something like “If ___ is strictly equal” or “If ___ is not strictly equal”</li>
+                 </ul>
+
+
+                 <h2>Other things to note:</h2>
+        <ul>
+            <li>Don’t ever stop talking!!! Basically “think out loud”. If someone could only hear an audio of your interview, would they know exactly what to type? Even if you code everything perfectly, if you don’t technically communicate well you will not pass.</li>
+            <li>It’s fine to look things up on Google as long as its not the question itself. If you do, be very clear about what you are googling, why you are googling it, and read aloud what you find.</li>
+            <li>They dock you for missing semi-colons. Look into when you need them (almost after ever bracket/parenthesis, and almost after every statemen).</li>
+            <li>Whenever you are debugging or console.logging, be very clear what result you’re expecting, and why you are making the change to test it. So say “I’m going to wrap a console.log around this ___ to see if/check if ___”. Don’t just throw things at the wall and hope they will stick. Make sure your interviewer can follow your line of thought the entire way. </li>
+            <li>When you are practicing by yourself, talk out-loud like you would in an interview to get used to voicing your thoughts every step of the way. And also de-bug like you should in an interview. Don’t haphazardly throw console.logs everywhere without knowing why you’re doing so.</li>
+            <li>Time yourself by giving yourself harder and harder questions. Aim for about 10 min per question for 50 min. At the 50 minute mark they will ask you verbal technical question which I’ve included later in this doc.</li>
+            <li>Get clear on the differences between var let and const. Oftentimes that is also a verbal question. In general, if you are declaring an array that is not going to change later, use const. If you are declaring an object literal, that means it will already have properties on them so you can declare with const. If you’re going to add the key/value pairs later declare it with let.</li>
+            <li>You need to get to all questions up to recursion at least. Then they will give you a “stumper” question that they don’t expect you to solve but what to see how you approach situations like that.</li>
+            <li>Note that depending on how far you get in your previous interview, the next interview will be harder. (You typically get 3 shots at passing per year)</li>
+        </ul>  
+        
+        <h2>100% necessary resources to prepare:</h2>
+        <ul>
+            <li>Join the JSHP slack channel called <a href=“https://codesmithx.slack.com/archives/C01JYJSA0MN”>#jshp_study_buddy_big_ol_group</a> led by Chris K. They typically will not post it ahead of time, but you can assume that they will start at 7PM EST every Sat. Most of the questions provided have been on the actual interview, so be sure to save them for practice later. Everyone takes turns doing 1 challenge in front of everyone. There is always at least 10 or more people who join, so if you can get comfortable with do a challenge in front of that many people it will be that much easier to do it in front of 1 person.</li>
+            <li>There are 2 <a href=“ https://app.codesmith.io/coding-events”>JS the Hard Parts workshops</a> every Thursday. Attend them to learn and practice your technical communication and to also build a mental model of the different concepts presented. Attend the same ones repeatedly. </li>
+            <li>Do CSX at least 3 times</li>
+            <li>Do <a href=“http://csbin.io”>CSBin.io</a> at least 3 times. Find the challenges under “Directory of Challenges” on the right-hand side menu.</li>
+            <li>If you feel like you’ve mastered all the known-interview questions (questions that people have sent you from their interviews or questions from the JSHP channel), and you’ve mastered CSX and CSBin, try your hand at <a href=“”http://codewars.com>CodeWars</a>. It will give you exposure to a massive set of problems and you will start to recognize patterns.</li>
+            <li>DM people on slack to do mock interviews, they are surprisingly happy to do so. No matter how much you practice by yourself, your brain works differently under a time limit and in front of other people. Interviewing is a skill in and of itself, so do not underestimate the power of practicing this. And on that note, lean into the Codesmith community in general. If you can find a group of people to study with consistently, even better.</li>
+        </ul>   
+
+        <center><h2>Additional Resources:</h2></center>
+                <ul>
+                    <li><a href="https://codesmithx.slack.com/archives/C01JYJSA0MN" target="blank">JSHP Study Group on slack</a></li>
+                    <li><a href=" https://app.codesmith.io/coding-events
+                        "target="blank">2 JSHP Workshops every Thursday</a></li>
+                    <li><a href="https://csx.codesmith.io/home"target="blank">DO CSX Thru OOP 3 times</a></li>
+                    <li><a href="https://csbin.io"target="blank">CS Bin Challenges</a></li>
+                    <li><a href="https://codesmithx.slack.com/archives/C03TK8QTFJ7"target="blank">Mock Interviews on slack</a></li>
+                    <li><a href="http://codewars.com"target="blank">Codewars</a></li>
+                </ul>
+
+</section>
+
+
+</main>
+
+<script src="script.js"></script>
+<script src="questions.js"></script>
+
+
+</body>
+</html>
